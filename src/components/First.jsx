@@ -1,11 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function First() {
+  const navigate = useNavigate();
+  const seller = () =>{
+    navigate("/Items")
+  }
+  const coustmer = () =>{
+    navigate("/Home")
+  }
   return (
     <div>
-    <Link to="/Seller"> Seller</Link>
-      <Link to="/Home">Coustmer</Link>
+     <button onClick={seller}>seller</button>
+     <button onClick={coustmer}>coustmer</button>
     </div>
   )
 }
